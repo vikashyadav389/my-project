@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html dir="ltr" :class="{ 'dark': dark }" x-data="data()" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="mRi5MFiu3SS9OqL4dJT1XmSamC8nzQbf6eecdFFF">
+	<title>Haldia Institute of Technology</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    		<link rel="shortcut icon"  href="https://hit.ucanapply.com/images/webicon.png">	
+	    <!-- Styles -->
+    <link rel="stylesheet" href="/css/app.css?id=5ed8b5119319b0ac10b79d9e401a55d7">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+	<style >[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+    </head>
+<body class="bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-gray-900">
+	
+	<div 
+	class="flex min-h-screen custom-scrollbar mb-40">
+		<div class="w-full flex flex-col">
+			<!-- start::Topbar -->
+			<div class="flex flex-col  p-1 border-b-2 border-indigo-600 dark:border-white">
+				<header class="flex flex-row justify-between items-center h-16 py-4 px-6 bg-white dark:bg-gray-900 dark:text-white">
+					  <div class="basis-1/2">
+						<img alt="Logo" class="object-fill h-16" src="https://d2xe8shibzpjog.cloudfront.net/logo/hit_logo.png">
+					  </div>
+					  <div class="basis-1/4 hidden lg:block text-lg leading-loose md:text-xl md:leading-loose ">
+						EXAMINATION SYSTEM  
+					  </div>
+					 
+				</header>
+							</div>
+			<!-- end::Topbar -->
+			<!-- start:Page content -->
+			<div class="h-full bg-gray-150 p-2 dark:bg-gray-700 dark:text-white">
+				<div  x-data="{
+	show: ''
+}">
+		<div class="w-full flex items-center justify-between bg-green-100 px-6 py-2 rounded-lg border border-green-300 mb-4" x-show="show">
+			<div class="flex items-center space-x-6">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+				</svg>
+				<div class="flex flex-col justify-center">
+					<span class="text-green-600 font-bold">Success</span>
+					<span class="text-sm text-green-600"></span>
+				</div>
+			</div>
+			<button class="text-xl text-gray-400 hover:text-gray-500" @click="show=false" title="Close">✕</button>
+		</div>
+</div>
+<div  x-data="{
+	show: ''
+	}">
+	<div class="w-full flex items-center justify-between bg-red-100 px-6 py-2 rounded-lg border border-red-300 mb-4" x-show="show">
+		<div class="flex items-center space-x-6">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+			</svg>
+			<div class="flex flex-col justify-center">
+				<span class="text-red-600 font-bold">Error</span>
+				<span class="text-sm text-red-600"></span>
+			</div>
+		</div>
+		<button class="text-xl text-gray-400 hover:text-gray-500" @click="show=false" title="Close">✕</button>
+	</div>
+</div>
+<div  x-data="{
+	show: '1'
+	}">
+
+	<div class="w-full flex items-center justify-between bg-red-100 px-6 py-2 rounded-lg border border-red-300 mb-4" x-show="show">
+		<div class="flex items-center space-x-6">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+			</svg>
+			<div class="flex flex-col justify-center">
+				<span class="text-red-600 font-bold">Error</span>
+									<span class="text-sm text-red-600">These credentials do not match our records.</span><hr class="mb-2">
+							</div>
+		</div>
+		<button class="text-xl text-gray-400 hover:text-gray-500" title="Close" @click="show=false">✕</button>
+	</div>
+</div>
+<div  x-data="{
+	show: ''
+	}">
+
+	<div class="w-full flex items-center justify-between bg-yellow-100 px-6 py-2 rounded-lg border border-yellow-300 mb-4" x-show="show">
+		<div class="flex items-center space-x-6">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+			</svg>
+			<div class="flex flex-col justify-center">
+				<span class="text-yellow-600 font-bold">Warning</span>
+				<span class="text-sm text-yellow-600"></span>
+			</div>
+		</div>
+		<button class="text-xl text-gray-400 hover:text-gray-500" title="Close" @click="show=false">✕</button>
+	</div>
+</div>
+<div  x-data="{
+	show: ''
+	}">
+	<div class="w-full flex items-center justify-between bg-blue-100 px-6 py-2 rounded-lg border border-blue-300 mb-4" x-show="show">
+		<div class="flex items-center space-x-6">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+			</svg>
+			<div class="flex flex-col justify-center">
+				<span class="text-blue-600 font-bold">Info</span>
+				<span class="text-sm text-blue-600"></span>
+			</div>
+		</div>
+		<button class="text-xl text-gray-400 hover:text-gray-500" title="Close" @click="show=false">✕</button>
+	</div>
+</div>				<div  x-data="wellcome">
+
+<div class="grid lg:grid-cols-4 gap-1 md:grid-cols-2 sm:grid-cols-1 justify-start">
+	<div class="px-5 mb-2" x-show='(univ.STUDENTPORTAL ==1)'>
+		<a href="javascript:void(0);" :disabled="isLoading" @click="login(5)">
+		<div class="w-full flex bg-gray-700 dark:bg-gray-900 first-letter:bg-white rounded-xl overflow-hdden shadow-md p-4 ">
+			<div class="flex-none w-14 h-16 bg-gray-500 dark:bg-gray-700">
+				<img class="bg-center" src="https://hit.ucanapply.com/upload/icons/student-section.png"/>
+			</div>
+			<div class="flex-initial w-64 ml-1">
+				<div class="border-b-2 p-2">
+					<span class="w-full font-black text-white">Student Login</span>
+					</span>
+				</div>
+				<div class="ml-5 font-medium text-white ">
+					<span>To Login click here....</span>
+				</div>
+			</div>
+		</div>
+		</a>
+    </div>
+	
+	<div class="px-5 mb-2" x-show='(univ.ADMINPORTAL ==1 && notstudent)'>
+		<a href="javascript:void(0);" @click="login(2)" :disabled="isLoading">
+			<div class="w-full flex bg-yellow-700 first-letter:bg-white rounded-xl overflow-hdden shadow-md p-4 ">
+				<div class="flex-none w-14 h-16 bg-yellow-500">
+					<img src="https://hit.ucanapply.com/upload/icons/administration.png"/>
+				</div>
+				<div class="flex-initial w-64 ml-1">
+					<div class="border-b-2 p-2">
+						<span class="w-full font-black text-white">
+						Administrator Login</span>
+						</span>
+					</div>
+					<div class="ml-5 font-medium text-white">
+						<span>To Login click here....</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="px-5 mb-2" x-show='(univ.TEACHERPORTAL ==1 && notstudent)'>
+		<a href="javascript:void(0);" @click="login(3)" :disabled="isLoading">
+		<div class="w-full flex bg-green-700 first-letter:bg-white rounded-xl overflow-hdden shadow-md p-4 ">
+			<div class="flex-none w-14 h-16 bg-green-500">
+				<img src="https://hit.ucanapply.com/upload/icons/enquery.png"/>
+			</div>
+			<div class="flex-initial w-64 ml-1">
+				<div class="border-b-2 p-2">
+					<span class="w-full font-black text-white">
+					Teacher / Evaluator </span>
+					</span>
+				</div>
+				<div class="ml-5 font-medium text-white">
+					<span>To Login click here....</span>
+				</div>
+			</div>
+		</div>
+		</a>
+	</div>
+	<div class="px-5 mb-2" x-show="(univ.COLLEGEPORTAL ==1 && notstudent)">
+		<a href="javascript:void(0);" @click="login(4)" :disabled="isLoading">
+		<div class="w-full flex bg-purple-700 first-letter:bg-white rounded-xl overflow-hdden shadow-md p-4 ">
+			<div class="flex-none w-14 h-16 bg-purple-500" >
+				<img src="https://hit.ucanapply.com/upload/icons/dept-master.png"/>
+			</div>
+			<div class="flex-initial w-64 ml-1">
+				<div class="border-b-2 p-2">
+					<span class="w-full font-black text-white">
+					College / Center Login </span>
+					</span>
+				</div>
+				<div class="ml-5 font-medium text-white">
+					<span>To Login click here....</span>
+				</div>
+			</div>
+		</div>
+		</a>
+	</div>
+		<div class="px-5 mb-2 " x-show='(RESULTS ==1)'> 
+		<a href="https://hit.ucanapply.com/result-details">
+		<div class="w-full flex bg-red-700 first-letter:bg-white rounded-xl overflow-hdden shadow-md p-4 ">
+			<div class="flex-none w-14 h-16 bg-red-500">
+				<img src="https://hit.ucanapply.com/upload/icons/dept-master.png"/>
+			</div>
+			<div class="flex-initial w-64 ml-1">
+				<div class="border-b-2 p-2">
+					<span class="w-full font-black text-white">
+						Results
+					</span>
+				</div>
+				<div class="ml-3 font-small text-white">
+					<span>Click Here to See Result</span>
+				</div>
+			</div>
+		</div>
+		</a>
+	</div>
+	
+									
+								
+</div>
+
+<div class="grid lg:grid-cols-3 gap-2 mt-5 md:grid-cols-2 sm:grid-cols-1 mb-10">
+	<div class="border border-gray-300 rounded text-center bg-white dark:bg-gray-800 dark:text-white  shadow-xl mb-8">
+		<div class="w-full h-12 rounded bg-gray-300 text-gray-900 font-bold flex items-center justify-center">	Technical HelpDesk Details
+		</div>
+		<div class="flex items-center rounded justify-center">
+			<div class="py-2 px-4">
+				<b>TECHNICAL HELPDESK- 9674107555,6292218757</b>.
+<b>
+TECHNICAL EMAIL HELPDESK-
+hitwbhelp@gmail.com</b>
+
+			</div>
+		</div>
+	</div>
+		</div>
+<div x-show.transition="status"  class="main-modal fixed w-full inset-0 z-50 overflow-hidden flex justify-center items-center animated faster " style="background: rgba(0,0,0,.7);">
+		<div class="container mx-auto rounded p-4 mt-2 overflow-y-auto">
+			<div class="bg-white rounded px-8 py-8 max-w-2xl mx-auto">
+				<div :class="{'p2 mb-8 bg-green-700': !isError, 'p-2 bg-red-700 mb-8': isError}" 
+				  class="text-center text-white" x-html="errorBody">
+				</div>
+				<div x-html="modalBodyHtml"></div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+			<!-- end:Page content -->
+		</div>
+	</div>
+	<footer class="bg-indigo-600 justify-end dark:bg-gray-900 text-lg leading-loose md:text-xl md:leading-loose text-white text-center border-t-2 border-white dark:border-white fixed inset-x-0 bottom-0 p-2 ">
+		<span class="bigger-120">
+		Haldia Institute of Technology
+			<span class="blue bolder">Smart Examination System </span>
+			&copy; 2024 - 2025
+		</span>
+		<div class="float-right">
+			<button class="rounded-md mt-2 focus:outline-none focus:shadow-outline-purple" @click="toggleTheme" aria-label="Toggle color mode">
+				<template x-if="!dark">
+					  <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+						  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
+						  </path>
+					  </svg>
+				</template>
+				<template x-if="dark">
+					  <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+						  <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+					  </svg>
+				</template>
+			</button>
+		</div>
+		<div class="flex w-full text-center justify-center">
+			<ul class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-gray-400 sm:mt-0">
+				<li>
+					<a href="https://ucanapply.com/" target="_blank"  class="mr-4 hover:underline md:mr-6 ">About Us</a>
+				</li>
+				<li>
+					<a href="https://ucanapply.com/privacy.html" target="_blank" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="https://ucanapply.com/refund.html" target="_blank" 
+					class="mr-4 hover:underline md:mr-6">
+						Refund & Cancellation Policy
+					</a>
+				</li>
+				<li>
+					<a href="https://ucanapply.com/terms.html" target="_blank"  
+					class="mr-4 hover:underline md:mr-6">
+						Terms & Conditions
+					</a>
+				</li>
+				<li>
+					<a href="https://ucanapply.com/#contact" 
+					target="_blank" class="hover:underline">Contact</a>
+				</li>
+			</ul>
+		</div>
+    </footer>
+	
+	<div id="loader" class="w-full h-full fixed block top-0 left-0 bg-white opacity-75 z-50">
+		  <span class="text-green-500 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0" style="
+			top: 50%;
+		">
+			<svg class="w-24 h-24 text-purple-600 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+				<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+				<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+			</svg>
+		</span>
+	</div>	
+	<script src="/js/guest.js?id=beca8d851236ed44d1db7e0a44af5659" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" defer ></script>
+		<script src="/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false" ></script><script data-turbo-eval="false" data-turbolinks-eval="false" >window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'mRi5MFiu3SS9OqL4dJT1XmSamC8nzQbf6eecdFFF';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+	<script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
+    <script>
+document.addEventListener('alpine:init', () => {
+    Alpine.data('wellcome',()=> ({
+		RESULTS			: 1,
+		HOSTEL			: 1,
+		univ			: {"id":1,"UNIVCODE":"U001","UNIID":"hit.ucanapply.com","UNIVNAME":"Haldia Institute of Technology","UNIVSTATE":"West Bengal","UNIVNAME1":null,"UNIVPHONE":"9674107555, 6292218757","UNIVFAX":"","UNIVEMAILID":"hitwbhelp@gmail.com","UNIVLOGO":"logo\/hit_logo.png","UNIVLOGO_PRINT":"logo\/hit_logo.png","AVAILTEXT":"{\u0022Hostel\u0022:false,\u0022Hrms\u0022:false,\u0022Inventory\u0022:false}","UNIVURL":null,"UNIVFACEBOOK":null,"UNIVGOOGLE":null,"UNIVTWITTER":null,"THEME_SCHEME":"black_blue","STUDENT_THEME":"","ADMINPORTAL":1,"COLLEGEPORTAL":1,"TEACHERPORTAL":1,"STUDENTPORTAL":1,"TO_SHOW_COLUNM_QUERY":"SELECT CONCAT(IFNULL(GURDIANSRES_PS,\u0027\u0027),\u0027 - \u0027,IFNULL(STUDENTFNAME,\u0027\u0027),\u0027 \u0027,IFNULL(STUDENTMNAME,\u0027\u0027),\u0027 \u0027,IFNULL(STUDENTLNAME,\u0027\u0027)) AS STUDENTNAME \r\nFROM `STUDENTAPPLICANTDATA` WHERE STUDENTCODE={STUDENTCODE}","TO_SHOW_COLUNM":"STUDENTNAME","T0_SHOW_EXTRA_COLUMN":"ROLLNO","UFM_DISPLAY_NAME":"","HELP_DESK_DETAILS":"\u003Cb\u003ETECHNICAL HELPDESK- 9674107555,6292218757\u003C\/b\u003E.\r\n\u003Cb\u003E\r\nTECHNICAL EMAIL HELPDESK-\r\nhitwbhelp@gmail.com\u003C\/b\u003E\r\n","HELP_DESK_URL":"","RESULT_ASK_CHECK_COLUMN":"Roll No,ROLLNO","RESULT_PAGE":"hit_result","TR_HEADING":"N","APPLICATION_TYPE":"1","created_at":null,"updated_at":"2018-04-07T08:17:47.000000Z","deleted_at":null},
+		path 			: "/",
+		type            : "",
+		notstudent		: false,
+		loginexpanded	: false,
+		isLoading		: false,
+		status			: false,
+		modalHeaderText	: "",
+		modalBodyHtml	: "", 
+		errorBody		: '',
+		isError			: false,
+		buttonLabel: 'Submit',
+		formData: {
+            username: "",
+            password: "",
+            login_type: ""
+        },
+		init() {
+			if(this.path!="student"){
+				this.notstudent=true;
+			}
+			if(this.type=='teacher'){
+				this.univ.ADMINPORTAL=0;
+				this.univ.STUDENTPORTAL=0;
+				this.univ.COLLEGEPORTAL=0;
+				this.RESULTS=0;
+				this.HOSTEL=0;
+			}
+		},
+		login(typ){
+			this.errorBody="";
+			this.isError=false;
+			this.formData.login_type=typ;
+			if(this.isLoading==false){
+				this.isLoading=true;
+				fetch("https://hit.ucanapply.com/get-login-form?typ="+typ)
+				.then(res => res.json())
+				.then(data => {
+					this.modalHeaderText = data.label;
+					this.modalBodyHtml = data.html;
+					this.status = true;	
+					this.isLoading=false;
+				}).catch((error) => {
+					console.log("Error","Something went wrong ! Try again later");
+					this.isLoading=false;
+				}); 
+			} 
+		},
+		postLogin(){
+			if(window.checkFormRequiredField('loginform')==true){
+				this.isLoading=true;
+				$('#loginform').submit();
+			}
+		},
+		forgetPassword(t){
+			this.errorBody="";
+			this.isError=false;
+			if(this.isLoading==false){
+				this.isLoading=true;
+				fetch("https://hit.ucanapply.com/forget-password?id="+t)
+				.then(res => res.json())
+				.then(data => {
+					this.modalHeaderText = data.label;
+					this.modalBodyHtml = data.html;
+					this.status = true;	
+				}).catch((error) => {
+					console.log("Error","Something went wrong ! Try again later");
+				});
+				this.isLoading=false;
+			} 
+		},
+		forgetPasswordSubmit(){
+			this.isError='';
+			if($('#username').val()=="" || ($('#email_id').val()=="" && $('#mobile_no').val()=="")){
+				this.isError=true;
+				this.errorBody='Fill Username and at least one from the Email id or Mobile no to reset your Password';
+				return false;
+			}
+			if($('#mobile_no').val()!="" && $('#mobile_no').val().length!=10){
+				this.isError=true;
+				this.errorBody="Invalid Mobile No. Mobile No must be 10 digit.";
+				return false;
+			}else if($('#email_id').val()!="" && !window.isEmail($('#email_id').val())){
+				this.isError=true;
+				this.errorBody="Invalid Email Id.";
+				return false;
+			}
+			if(this.isError!=true){
+				this.isLoading=true;
+				window.postData("https://hit.ucanapply.com/forget-password-submit",{
+					'username':$('form#forget-password').find('#username').val(),
+					'EMAIL_ID':$('form#forget-password').find('#email_id').val(),
+					'MOBILE_NO':$('form#forget-password').find('#mobile_no').val()
+				})
+				.then(data => {
+					if(data.status==true){
+						this.isError=false;
+						this.errorBody=data.message;
+					}else if(data.status == false){
+						this.isError=true;
+						this.errorBody=data.message;
+					}
+				}).catch((error) => {
+					console.log("Error","Something went wrong ! Try again later");
+				});
+				this.isLoading=false;
+			}
+			
+		}
+		
+	}))
+})
+
+</script>
+	<script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+	<script>
+		function loadGoogleTranslate(){
+			new google.translate.TranslateElement("google_element");
+		}
+	</script>
+
+	</body>
+</html>
